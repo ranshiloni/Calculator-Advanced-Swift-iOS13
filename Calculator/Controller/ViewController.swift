@@ -38,10 +38,10 @@ class ViewController: UIViewController {
         calculator.setNumber(displayValue)
         
         if let calcMethod = sender.currentTitle {
-            guard let result = calculator.calculate(operator: calcMethod) else {
-                fatalError("Couldn't calculate a result")
-            }
+            if let result = calculator.calculate(operator: calcMethod) {
             displayValue = result
+        }
+        
         }
         
     }
